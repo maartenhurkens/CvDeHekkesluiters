@@ -1,0 +1,33 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/components/member-service/member-service.html">
+<link rel="import" href="/components/member-card/member-card.html">
+
+<polymer-element name="member-list" attributes="show">
+  <template>
+
+    <link rel="stylesheet" href="member-list.css">
+
+    <member-service id="service" members="{{members}}"></member-service>
+
+    <div layout vertical center>
+      <template repeat="{{member in members}}">
+        <member-card favorite="{{member.favorite}}" on-favorite-tap="{{handleFavorite}}" hidden?="{{show == 'favorites' && !member.favorite}}">
+
+          <img src="http://www.cvdehekkesluiters.nl/{{member.foto}}" width="70" height="70">
+          <h2>{{member.voornaam}} {{member.achternaam}}</h2>
+          <p>Facebook: {{member.facebook}}</p>
+        </member-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      handleFavorite: function(event, detail, sender) {
+        var member = sender.templateInstance.model.member;
+        this.$.service.setFavorite(member.voornaam, member.favorite);
+      }
+    });
+  </script>
+
+</polymer-element>
