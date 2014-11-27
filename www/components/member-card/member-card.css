@@ -23,11 +23,15 @@ polyfill-next-selector { content: '.card-header img'; }
   margin: 10px;
 }
 core-icon-button {
-  position: absolute;
+  position: relative;
   top: 3px;
   right: 3px;
   color: #636363;
 }
-:host([favorite]) core-icon-button {
+:host([favorite]) #favorite {
   color: #da4336;
+}
+
+:host([facebook]) #facebook {
+  color: #3b5998  ;
 }

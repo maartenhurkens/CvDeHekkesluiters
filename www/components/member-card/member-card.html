@@ -1,5 +1,7 @@
-<link rel="import"   href="/bower_components/polymer/polymer.html">
-<link rel="import"   href="/bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="/bower_components/core-icons/social-icons.html">
+
 
 <polymer-element name="member-card">
   <template>
@@ -12,9 +14,17 @@
     </div>
 
     <core-icon-button
-      id="favicon"
+      id="favorite"
+      class="favorite"
       icon="favorite"
       on-tap="{{favoriteTapped}}">
+    </core-icon-button>
+
+    <core-icon-button
+      id="facebook"
+      class="facebook"
+      icon="social:post-facebook"
+      on-tap="{{openFacebook}}">
     </core-icon-button>
 
     <content></content>
@@ -27,11 +37,26 @@
         favorite: {
           value: false,
           reflect: true
+        },
+        facebook: {
+          value: false,
+          reflect: true
+        },
+        facebookUrl: {
+          value: "",
+          reflect: true
         }
       },
       favoriteTapped: function(event, detail, sender) {
         this.favorite = !this.favorite;
         this.fire('favorite-tap');
+      },
+
+      openFacebook: function(event, detail, sender) {
+        if (this.facebook) {
+          window.open("http://" + this.facebookUrl);
+          // window.open("fb://facewebmodal/f?href=http://" + this.facebookUrl);
+        }
       }
     });
   </script>
