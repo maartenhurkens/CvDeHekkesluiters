@@ -22,6 +22,9 @@ polyfill-next-selector { content: '.card-header img'; }
   border-radius: 50%;
   margin: 10px;
 }
+.card-shadow {
+  position: initial;
+}
 core-icon-button {
   position: relative;
   top: 3px;

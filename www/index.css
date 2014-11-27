@@ -7,11 +7,16 @@ html,body {
 core-header-panel {
   height: 100%;
   overflow: auto;
+  background: #E5E5E5;
   -webkit-overflow-scrolling: touch;
 }
 core-toolbar {
   background: #03a9f4;
   color: white;
+}
+
+#navheader {
+  background-color: #56BA89;
 }
 #tabs {
   width: 100%;
@@ -33,4 +38,10 @@ core-toolbar {
   .container {
     width: 400px;
   }
+}
+
+/* drawer is always visible on a wide screen
+   so menu button isn't required */
+core-drawer-panel:not([narrow]) #navicon {
+  display: none;
 }
