@@ -1,0 +1,33 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/components/news-service/news-service.html">
+<link rel="import" href="/components/news-card/news-card.html">
+
+<polymer-element name="news-list" attributes="show">
+  <template>
+
+    <link rel="stylesheet" href="news-list.css">
+
+    <news-service id="service" news="{{news}}"></news-service>
+
+    <div layout vertical center>
+      <template repeat="{{new in news}}">
+        <news-card>
+          <img src="http://www.cvdehekkesluiters.nl/[[new.foto]]">
+          <h2>{{new.title}}</h2>
+          <h6>{{new.datum}}</h6>
+          <p>{{new.tekst}}</p>
+        </news-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      filterTags: function(event, detail, sender) {
+        var news = sender.templateInstance.model.new;
+        return "hallo ik ben tof";
+      }
+    });
+  </script>
+
+</polymer-element>

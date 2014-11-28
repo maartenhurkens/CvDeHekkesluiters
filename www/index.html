@@ -1,82 +1,71 @@
 <!doctype html>
 <html>
-<head>
-  <title>CV De Hekkesluiters</title>
+  <head>
+    <title>CV de Hekkesluiters</title>
 
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <!-- custom styleheet -->
-  <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="index.css" rel="stylesheet" type="text/css">
 
-  <!-- bower javascript-->
-  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
-  <!-- custom javascript -->
-  <script src="index.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
-  <!-- bower components -->
-  <link rel="import" href="/bower_components/core-scaffold/core-scaffold.html">
-  <link rel="import" href="/bower_components/core-header-panel/core-header-panel.html">
-  <link rel="import" href="/bower_components/core-menu/core-menu.html">
-  <link rel="import" href="/bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="/bower_components/core-icons/core-icons.html">
+    <link rel="import" href="/bower_components/core-icons/social-icons.html">
+    <link rel="import" href="/bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="/bower_components/font-roboto/roboto.html">
     <link rel="import" href="/bower_components/core-item/core-item.html">
-  <link rel="import" href="/bower_components/core-item/core-item.html">
+    <link rel="import" href="/bower_components/core-menu/core-menu.html">
+    <link rel="import" href="/bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="/bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="/bower_components/core-pages/core-pages.html">
+    <link rel="import" href="/components/news-list/news-list.html">
+    <link rel="import" href="/components/member-list/member-list.html">
+  </head>
 
-  <link rel="import" href="/bower_components/paper-toast/paper-toast.html">
-  <link rel="import" href="/bower_components/paper-fab/paper-fab.html">
-  <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+  <body unresolved>
+    <core-scaffold>
+      <core-header-panel navigation flex>
+        <core-toolbar id="navheader">
+          <span>Menu</span>
+        </core-toolbar>
+        <core-menu>
+          <core-item num="0" label="Nieuws" icon="subject"></core-item>
+          <core-item num="1" label="Leden"  icon="social:people"></core-item>
+          <core-item num="2" label="Agenda" icon="view-agenda"></core-item>
+        </core-menu>
+      </core-header-panel>
 
-  <!-- custom components -->
-  <link rel="import" href="/components/member-list/member-list.html">
-
-</head>
-
-<body unresolved>
-  <core-drawer-panel id="drawerPanel">
-
-    <core-header-panel drawer>
-      <core-toolbar id="navheader'">
-        <span>Menu</span>
-      </core-toolbar>
-      <core-menu>
-        <core-item label="One"></core-item>
-        <core-item label="Two"></core-item>
-      </core-menu>
-    </core-header-panel>
-
-    <core-header-panel main>
-      <core-toolbar id="mainheader">
-        <paper-icon-button id="navicon" icon="menu"></paper-icon-button>
-        <span flex>Title</span>
-      </core-toolbar>
-
-      <paper-tabs id="tabs" selected="all" self-end>
-        <paper-tab name="all">All</paper-tab>
-        <paper-tab name="favorites">Favorites</paper-tab>
-      </paper-tabs>
-      <div class="container" layout vertical center>
-          <member-list show="all"></member-list>
+      <div tool id="title">
+        Nieuws
       </div>
-    </core-header-panel>
-  </core-drawer-panel>
 
+      <core-pages selected="0">
+        <div class="container" layout vertical center>
+          <news-list></news-list>
+        </div>
+        <div class="container" layout vertical center>
+          <!--<member-list></member-list>-->
+        </div>
+      </core-pages>
+    </core-scaffold>
+  </body>
 
   <script>
-    var tabs = document.querySelector('paper-tabs');
-    var list = document.querySelector('member-list');
+    var menu = document.querySelector('core-menu');
+    var pages = document.querySelector('core-pages');
+    var scaffold = document.querySelector('core-scaffold');
+    var title = document.getElementById('title');
 
-    tabs.addEventListener('core-select', function() {
-      list.show = tabs.selected;
+    menu.addEventListener('core-select', function() {
+      pages.selected = menu.selected;
+      var item = menu.selectedItem;
+      title.innerHTML = item.label;
+      scaffold.closeDrawer();
     });
 
-    document.addEventListener('polymer-ready', function() {
-      var navicon = document.getElementById('navicon');
-      var drawerPanel = document.getElementById('drawerPanel');
-      navicon.addEventListener('click', function() {
-        drawerPanel.togglePanel();
-      });
-    });
   </script>
 
-</body>
 </html>

@@ -1,0 +1,29 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="news-service" attributes="news">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="http://www.cvdehekkesluiters.nl/nieuws.json"
+      on-core-response="{{newsLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+  Polymer('news-service', {
+    created: function() {
+      this.news = [];
+    },
+    newsLoaded: function() {
+      // Make a copy of the loaded data
+      this.news = this.$.ajax.response.nieuws.slice(0);
+    }
+  });
+  </script>
+</polymer-element>

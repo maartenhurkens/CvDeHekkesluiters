@@ -1,3 +1,6 @@
 {
-    "packageId": "nl.hurkens.maarten.cvdehekkesluiters"
+    "packageId": "nl.hurkens.maarten.cvdehekkesluiters",
+    "permissions": [
+          "<all_urls>"
+    ]
 }

@@ -1,7 +1,6 @@
 html,body {
   height: 100%;
   margin: 0;
-  background-color: #E5E5E5;
   font-family: 'RobotoDraft', sans-serif;
 }
 core-header-panel {
@@ -11,13 +10,21 @@ core-header-panel {
   -webkit-overflow-scrolling: touch;
 }
 core-toolbar {
-  background: #03a9f4;
-  color: white;
+  background: #ffff00;
+  color: #000000;
 }
 
-#navheader {
-  background-color: #56BA89;
+core-scaffold::shadow core-toolbar {
+  background-color: #000000;
+  color: #ffff00;
 }
+
+core-scaffold::shadow core-header-panel {
+  background: #ffffff;
+  color: black;
+}
+
+
 #tabs {
   width: 100%;
   margin: 0;

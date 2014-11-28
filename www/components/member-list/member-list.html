@@ -11,10 +11,9 @@
 
     <div layout vertical center>
       <template repeat="{{member in members}}">
-        <member-card favorite="{{member.favorite}}" on-favorite-tap="{{handleFavorite}}"
-            hidden?="{{show == 'favorites' && !member.favorite}}" facebook="{{member.facebook != '#'}}" facebookUrl="{{member.facebook}}">
+        <member-card facebook="[[member.facebook != '#']]" facebookUrl="[[member.facebook]]">
 
-          <img src="http://www.cvdehekkesluiters.nl/{{member.foto}}" width="70" height="70">
+          <!--<img src="http://www.cvdehekkesluiters.nl/[[member.foto]]">-->
           <h2>{{member.voornaam}} {{member.achternaam}}</h2>
           <p>{{member.intro}}</p>
         </member-card>
@@ -24,10 +23,6 @@
 
   <script>
     Polymer({
-      handleFavorite: function(event, detail, sender) {
-        var member = sender.templateInstance.model.member;
-        this.$.service.setFavorite(member.voornaam, member.favorite);
-      }
     });
   </script>
 
