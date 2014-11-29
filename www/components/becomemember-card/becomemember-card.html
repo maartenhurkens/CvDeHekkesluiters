@@ -1,0 +1,41 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="/bower_components/core-icons/core-icons.html">
+<link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="becomemember-card">
+
+  <template>
+
+    <link rel="stylesheet" href="becomemember-card.css">
+
+    <paper-shadow class="card-shadow">
+      <div class="card-header" layout horizontal center >
+        <content select="h2"></content>
+      </div>
+
+        <div class="card-content">
+          <!--<paper-shadow class="img-shadow">-->
+            <content select="img"></content>
+          <!--</paper-shadow>-->
+
+          <content></content>
+          <core-icon-button
+            id="mail"
+            class="mail"
+            icon="mail"
+            on-tap="{{openMail}}">
+          </core-icon-button>
+        </div>
+      </paper-shadow>
+
+  </template>
+
+  <script>
+    Polymer({
+      openMail: function(event, detail, sender) {
+        window.open("mailto:secretaris@cvdehekkesluiters.nl?subject=Ik%20wil%20lid%20worden%20van%20de%20Hekkesluiters");
+      }
+    });
+  </script>
+</polymer-element>

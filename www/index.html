@@ -24,9 +24,10 @@
     <link rel="import" href="/bower_components/core-animated-pages/core-animated-pages.html">
 
     <link rel="import" href="/components/news-list/news-list.html">
-    <link rel="import" href="/components/member-list/member-list.html">
     <link rel="import" href="/components/whoarewe-list/whoarewe-list.html">
+    <link rel="import" href="/components/member-list/member-list.html">
     <link rel="import" href="/components/sound-list/sound-list.html">
+    <link rel="import" href="/components/becomemember-list/becomemember-list.html">
   </head>
 
   <body unresolved>
@@ -40,6 +41,7 @@
           <core-item label="Wie zijn we" icon="help"></core-item>
           <core-item label="Leden"  icon="social:people"></core-item>
           <core-item label="Muziek" icon="av:my-library-music"></core-item>
+          <core-item label="Ook lid worden?" icon="add-box"></core-item>
         </core-menu>
       </core-header-panel>
 
@@ -59,6 +61,9 @@
         </div>
         <div class="container" layout vertical center>
           <sound-list></sound-list>
+        </div>
+        <div class="container" layout vertical center>
+          <becomemember-list></becomemember-list>
         </div>
       </core-animated-pages>
     </core-scaffold>
