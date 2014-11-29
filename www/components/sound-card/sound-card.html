@@ -1,0 +1,24 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="sound-card">
+  <template>
+
+    <link rel="stylesheet" href="sound-card.css">
+
+    <paper-shadow class="card-shadow">
+      <div class="card-header" layout horizontal center>
+        <content select="h2"></content>
+      </div>
+
+      <div class="card-content">
+        <content select="audio"></content>
+      </div>
+    </paper-shadow>
+  </template>
+
+  <script>
+    Polymer({
+    });
+  </script>
+</polymer-element>

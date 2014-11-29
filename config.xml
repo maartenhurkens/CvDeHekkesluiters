@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="nl.hurkens.maarten.cvdehekkesluiters" version="0.1.1">
-    <name>CV De Hekkesluiters</name>
+    <name>CV de Hekkesluiters</name>
 
-    <description>A Sample Chrome App</description>
+    <description>Chrome app for CV the Gateclosers</description>
 
     <author>Author Name &lt;a@b.com></author>
 

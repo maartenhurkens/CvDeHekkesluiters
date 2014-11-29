@@ -14,6 +14,7 @@
 
     <link rel="import" href="/bower_components/core-icons/core-icons.html">
     <link rel="import" href="/bower_components/core-icons/social-icons.html">
+    <link rel="import" href="/bower_components/core-icons/av-icons.html">
     <link rel="import" href="/bower_components/core-scaffold/core-scaffold.html">
     <link rel="import" href="/bower_components/font-roboto/roboto.html">
     <link rel="import" href="/bower_components/core-item/core-item.html">
@@ -25,6 +26,7 @@
 
     <link rel="import" href="/components/news-list/news-list.html">
     <link rel="import" href="/components/member-list/member-list.html">
+    <link rel="import" href="/components/sound-list/sound-list.html">
   </head>
 
   <body unresolved>
@@ -36,7 +38,7 @@
         <core-menu>
           <core-item num="0" label="Nieuws" icon="subject"></core-item>
           <core-item num="1" label="Leden"  icon="social:people"></core-item>
-          <core-item num="2" label="Agenda" icon="view-agenda"></core-item>
+          <core-item num="2" label="Muziek" icon="av:my-library-music"></core-item>
         </core-menu>
       </core-header-panel>
 
@@ -52,7 +54,7 @@
           <member-list></member-list>
         </div>
         <div class="container" layout vertical center>
-          agenda todo
+          <sound-list></sound-list>
         </div>
       </core-animated-pages>
     </core-scaffold>

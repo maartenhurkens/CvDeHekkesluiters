@@ -1,6 +1,6 @@
 {
-    "name": "CV De Hekkesluiters",
-    "description": "A Sample Chrome App",
+    "name": "CV de Hekkesluiters",
+    "description": "Chrome app for CV the Gateclosers",
     "manifest_version": 2,
     "minimum_chrome_version": "23",
     "version": "0.1.1",

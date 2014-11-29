@@ -1,0 +1,27 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/components/sound-service/sound-service.html">
+<link rel="import" href="/components/sound-card/sound-card.html">
+
+<polymer-element name="sound-list">
+  <template>
+
+    <link rel="stylesheet" href="sound-list.css">
+
+    <sound-service id="service" sounds="{{sounds}}"></sound-service>
+
+    <div layout vertical center>
+      <template repeat="{{sound in sounds}}">
+        <sound-card>
+          <h2>[[sound.name]]</h2>
+          <audio controls loop src="http://www.cvdehekkesluiters.nl/app/sound/[[sound.file]]"/>
+        </sound-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+    });
+  </script>
+
+</polymer-element>
