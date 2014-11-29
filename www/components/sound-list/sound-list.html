@@ -11,9 +11,8 @@
 
     <div layout vertical center>
       <template repeat="{{sound in sounds}}">
-        <sound-card>
+        <sound-card file="[[sound.file]]">
           <h2>[[sound.name]]</h2>
-          <audio controls loop src="http://www.cvdehekkesluiters.nl/app/sound/[[sound.file]]"/>
         </sound-card>
       </template>
     </div>

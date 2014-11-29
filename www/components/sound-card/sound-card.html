@@ -1,7 +1,9 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="/bower_components/core-icons/core-icons.html">
+<link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
 
-<polymer-element name="sound-card">
+<polymer-element name="sound-card" attributes="file">
   <template>
 
     <link rel="stylesheet" href="sound-card.css">
@@ -12,8 +14,9 @@
       </div>
 
       <div class="card-content">
-        <content select="audio"></content>
+        <audio controls loop src="http://www.cvdehekkesluiters.nl/app/sound/[[file]]"/>
       </div>
+      <!--<a href="http://www.cvdehekkesluiters.nl/app/sound/[[file]]" download>Download</a>-->
     </paper-shadow>
   </template>
 

@@ -9,7 +9,6 @@
 
     <link href="index.css" rel="stylesheet" type="text/css">
 
-
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
     <link rel="import" href="/bower_components/core-icons/core-icons.html">
@@ -26,6 +25,7 @@
 
     <link rel="import" href="/components/news-list/news-list.html">
     <link rel="import" href="/components/member-list/member-list.html">
+    <link rel="import" href="/components/member-card/member-card.html">
     <link rel="import" href="/components/sound-list/sound-list.html">
   </head>
 
@@ -36,9 +36,10 @@
           <span>Menu</span>
         </core-toolbar>
         <core-menu>
-          <core-item num="0" label="Nieuws" icon="subject"></core-item>
-          <core-item num="1" label="Leden"  icon="social:people"></core-item>
-          <core-item num="2" label="Muziek" icon="av:my-library-music"></core-item>
+          <core-item label="Nieuws" icon="subject"></core-item>
+          <core-item label="Wie zijn we" icon="help"></core-item>
+          <core-item label="Leden"  icon="social:people"></core-item>
+          <core-item label="Muziek" icon="av:my-library-music"></core-item>
         </core-menu>
       </core-header-panel>
 
@@ -49,6 +50,13 @@
       <core-animated-pages selected="0">
         <div class="container" layout vertical center>
           <news-list></news-list>
+        </div>
+        <div class="container" layout center>
+          <member-card facebook facebookUrl="https://www.facebook.com/cvdehekkesluiters">
+            <img src="http://www.cvdehekkesluiters.nl/images/leden.jpg">
+            <h2>CV de Hekkesluiters</h2>
+            <p>Met jaren ervaring in het vieren van carnaval is de naam van deze vereniging ontstaan op een goede carnavalsavond waar opnieuw dezelfde mensen het licht aan zagen gaan, en het hek konden sluiten. Hierop hebben de pioniers carnavalsavonden op rij gescout naar hekkensluiters welke een bestuursplek kunnen vervullen. Want de bestuursleden moesten wel ervaring hebben met het sluiten van hekken. Carnaval was voorbij, maar de hekkesluiters waren pas net begonnen. Vergaderingen werden in de agenda genoteerd en hebben plaatsgevonden. En nu...... kunnen wij met gepaste trots mededelen dat wij officieel geregistreerd zijn als CV de Hekkesluiters te Oss.</p>
+          </member-card>
         </div>
         <div class="container" layout vertical center>
           <member-list></member-list>
