@@ -12,7 +12,6 @@
     <div layout vertical center>
       <template repeat="{{member in members}}">
         <member-card facebook="[[member.facebook != '#']]" facebookUrl="[[member.facebook]]">
-
           <img src="http://www.cvdehekkesluiters.nl/[[member.foto]]">
           <h2>{{member.voornaam}} {{member.achternaam}}</h2>
           <p>{{member.intro}}</p>

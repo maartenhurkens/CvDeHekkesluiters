@@ -48,6 +48,8 @@ core-scaffold::shadow core-header-panel {
 }
 
 member-card {
+    display: block;
+  width: 100%;
   margin-bottom: 30px;
 }
 
