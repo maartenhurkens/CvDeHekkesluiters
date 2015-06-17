@@ -1,0 +1,37 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/components/member-service/member-service.html">
+<link rel="import" href="/components/member-card/member-card.html">
+
+<polymer-element name="member-list" attributes="show">
+  <template>
+
+    <link rel="stylesheet" href="member-list.css">
+
+    <member-service id="service" members="{{members}}"></member-service>
+
+    <div layout vertical center>
+      Zoek op voornaam: <input type="text" value="{{ searchTerm }}">
+    </div>
+
+    <div layout vertical center>
+      <template repeat="{{member in members}}">
+        <member-card facebook="{{member.facebook != '#'}}" facebookUrl="{{member.facebook}}" hidden?="{{ {searchTerm:searchTerm, voornaam:member.voornaam} | filterOnName}}">
+          <img src="http://www.cvdehekkesluiters.nl/[[member.foto]]">
+          <h2>{{member.voornaam}} {{member.achternaam}}</h2>
+          <p>{{member.intro}}</p>
+        </member-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      filterOnName: function(value) {
+        var voornaam = value.voornaam.toLowerCase();
+        var searchTerm = value.searchTerm ? value.searchTerm.toLowerCase() : "";
+        return searchTerm != "" && voornaam.indexOf(searchTerm) == -1;
+      }
+    });
+  </script>
+
+</polymer-element>

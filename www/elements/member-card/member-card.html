@@ -1,0 +1,57 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="/bower_components/core-icons/social-icons.html">
+<link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="/bower_components/core-collapse/core-collapse.html">
+
+
+
+<polymer-element name="member-card">
+  <template>
+
+    <link rel="stylesheet" href="member-card.css">
+
+    <paper-shadow class="card-shadow">
+      <div class="card-header" layout horizontal center >
+        <content select="h2"></content>
+      </div>
+
+        <div class="card-content">
+          <!--<paper-shadow class="img-shadow">-->
+            <content select="img"></content>
+          <!--</paper-shadow>-->
+
+          <core-icon-button
+            id="facebook"
+            class="facebook"
+            icon="social:post-facebook"
+            on-tap="{{openFacebook}}">
+          </core-icon-button>
+
+          <content></content>
+        </div>
+      </paper-shadow>
+  </template>
+
+  <script>
+    Polymer({
+      publish: {
+        facebook: {
+          value: false,
+          reflect: true
+        },
+        facebookUrl: {
+          value: "",
+          reflect: true
+        }
+      },
+
+      openFacebook: function(event, detail, sender) {
+        if (this.facebook) {
+          window.open("http://" + this.facebookUrl);
+          // window.open("fb://facewebmodal/f?href=http://" + this.facebookUrl);
+        }
+      }
+    });
+  </script>
+</polymer-element>
